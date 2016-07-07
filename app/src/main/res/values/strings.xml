@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Dagger 2 Shared Module Playground</string>
+    <string name="go_to_shared_button">Go to shared activity</string>
 </resources>
