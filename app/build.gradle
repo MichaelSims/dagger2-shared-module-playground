@@ -6,7 +6,7 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        applicationId "com.example.dagger2sharedmoduleplayround"
+        applicationId "com.example.dagger2sharedmoduleplayground"
         minSdkVersion 21
         targetSdkVersion 23
         versionCode 1

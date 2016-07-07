@@ -1,6 +1,6 @@
-package com.example.dagger2sharedmoduleplayround.dagger;
+package com.example.dagger2sharedmoduleplayground.dagger;
 
-import com.example.dagger2sharedmoduleplayround.services.StringService;
+import com.example.dagger2sharedmoduleplayground.services.StringService;
 import dagger.Module;
 import dagger.Provides;
 

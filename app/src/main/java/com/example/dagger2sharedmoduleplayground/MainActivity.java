@@ -1,9 +1,9 @@
-package com.example.dagger2sharedmoduleplayround;
+package com.example.dagger2sharedmoduleplayground;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
-import com.example.dagger2sharedmoduleplayround.services.StringService;
+import com.example.dagger2sharedmoduleplayground.services.StringService;
 
 import javax.inject.Inject;
 

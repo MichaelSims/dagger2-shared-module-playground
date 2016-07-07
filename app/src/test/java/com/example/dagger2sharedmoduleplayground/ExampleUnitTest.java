@@ -1,4 +1,4 @@
-package com.example.dagger2sharedmoduleplayround;
+package com.example.dagger2sharedmoduleplayground;
 
 import org.junit.Test;
 

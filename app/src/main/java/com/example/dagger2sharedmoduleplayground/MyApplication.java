@@ -1,9 +1,9 @@
-package com.example.dagger2sharedmoduleplayround;
+package com.example.dagger2sharedmoduleplayground;
 
 import android.app.Application;
-import com.example.dagger2sharedmoduleplayround.dagger.ApplicationComponent;
-import com.example.dagger2sharedmoduleplayround.dagger.ApplicationModule;
-import com.example.dagger2sharedmoduleplayround.dagger.DaggerApplicationComponent;
+import com.example.dagger2sharedmoduleplayground.dagger.ApplicationComponent;
+import com.example.dagger2sharedmoduleplayground.dagger.ApplicationModule;
+import com.example.dagger2sharedmoduleplayground.dagger.DaggerApplicationComponent;
 
 public class MyApplication extends Application {
 
