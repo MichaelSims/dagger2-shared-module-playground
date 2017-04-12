@@ -1,6 +1,8 @@
 package com.example.dagger2sharedmoduleplayground.dagger;
 
 import android.support.v7.app.AppCompatActivity;
+import com.example.dagger2sharedmoduleplayground.services.Toaster;
+import com.example.shared.ToasterApi;
 import dagger.Module;
 import dagger.Provides;
 
@@ -17,4 +19,10 @@ public class PerActivityModule {
     AppCompatActivity provideActivity() {
         return activity;
     }
+
+    @Provides
+    ToasterApi provideToasterAsGeneralType(Toaster toaster) {
+        return toaster;
+    }
+
 }

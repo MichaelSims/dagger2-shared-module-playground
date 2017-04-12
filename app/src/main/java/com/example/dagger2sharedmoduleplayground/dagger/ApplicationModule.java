@@ -1,8 +1,10 @@
 package com.example.dagger2sharedmoduleplayground.dagger;
 
 import com.example.dagger2sharedmoduleplayground.services.StringService;
+import com.example.dagger2sharedmoduleplayground.services.Toaster;
 import com.example.shared.BestStringProvider;
 import com.example.shared.StringServiceApi;
+import com.example.shared.ToasterApi;
 import com.example.shared.dagger.SharedModule;
 import dagger.Module;
 import dagger.Provides;
