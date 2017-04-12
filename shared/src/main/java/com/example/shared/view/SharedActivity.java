@@ -9,11 +9,12 @@ import android.view.View;
 import android.widget.TextView;
 import com.example.shared.SharedModuleComponentProvider;
 import com.example.shared.R;
+import com.example.shared.SharedPerActivityComponent;
 import com.example.shared.StringServiceApi;
 
 import javax.inject.Inject;
 
-public class SharedActivity extends AppCompatActivity {
+public abstract class SharedActivity extends AppCompatActivity {
 
     @Inject StringServiceApi stringService;
 
@@ -37,6 +38,14 @@ public class SharedActivity extends AppCompatActivity {
         TextView textView = (TextView) findViewById(R.id.shared_text_view);
         //noinspection ConstantConditions
         textView.setText(stringService.getTheBestString());
+    }
+
+    private SharedPerActivityComponent component = null;
+    protected abstract SharedPerActivityComponent getComponent();
+
+    @Override
+    public Object onRetainCustomNonConfigurationInstance() {
+        return getComponent();
     }
 
 }

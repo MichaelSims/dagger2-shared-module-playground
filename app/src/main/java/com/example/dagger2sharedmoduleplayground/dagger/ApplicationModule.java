@@ -8,9 +8,17 @@ import dagger.Module;
 import dagger.Provides;
 
 import javax.inject.Singleton;
+import java.util.concurrent.atomic.AtomicInteger;
 
-@Module(includes = SharedModule.class)
+@Module(includes = SharedModule.class, subcomponents = PerActivityComponent.class)
 public class ApplicationModule {
+
+    private final AtomicInteger counter = new AtomicInteger(0);
+
+    @Provides
+    Integer provideCounterValue() {
+        return counter.incrementAndGet();
+    }
 
     @Singleton
     @Provides

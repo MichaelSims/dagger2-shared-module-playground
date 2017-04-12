@@ -26,4 +26,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/go_to_shared_button"/>
+    <Button
+            android:id="@+id/show_toast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/show_toast"/>
 </LinearLayout>
