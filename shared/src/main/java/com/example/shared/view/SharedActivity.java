@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
-import com.example.shared.SharedModuleInjectorProvider;
+import com.example.shared.SharedModuleComponentProvider;
 import com.example.shared.R;
 import com.example.shared.StringServiceApi;
 
@@ -20,7 +20,7 @@ public class SharedActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ((SharedModuleInjectorProvider) getApplicationContext()).getInjector().inject(this);
+        ((SharedModuleComponentProvider) getApplicationContext()).getDaggerComponentForSharedModule().inject(this);
         setContentView(R.layout.activity_shared);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

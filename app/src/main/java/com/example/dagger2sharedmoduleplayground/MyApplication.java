@@ -4,11 +4,11 @@ import android.app.Application;
 import com.example.dagger2sharedmoduleplayground.dagger.ApplicationComponent;
 import com.example.dagger2sharedmoduleplayground.dagger.ApplicationModule;
 import com.example.dagger2sharedmoduleplayground.dagger.DaggerApplicationComponent;
-import com.example.shared.SharedModuleInjector;
-import com.example.shared.SharedModuleInjectorProvider;
+import com.example.shared.SharedModuleComponent;
+import com.example.shared.SharedModuleComponentProvider;
 import com.example.shared.dagger.SharedModule;
 
-public class MyApplication extends Application implements SharedModuleInjectorProvider {
+public class MyApplication extends Application implements SharedModuleComponentProvider {
 
     private ApplicationComponent applicationComponent;
 
@@ -27,7 +27,7 @@ public class MyApplication extends Application implements SharedModuleInjectorPr
     }
 
     @Override
-    public SharedModuleInjector getInjector() {
+    public SharedModuleComponent getDaggerComponentForSharedModule() {
         return getApplicationComponent();
     }
 }
