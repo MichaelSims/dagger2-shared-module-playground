@@ -10,7 +10,7 @@ import javax.inject.Inject;
 import java.util.Locale;
 
 @PerActivity
-public class Toaster implements ToasterApi{
+public class Toaster implements ToasterApi {
 
     private final StringServiceApi stringServiceApi;
     private final AppCompatActivity activity;
@@ -25,6 +25,7 @@ public class Toaster implements ToasterApi{
 
     @Override
     public void showToast() {
-        Toast.makeText(activity, String.format(Locale.US, "%d %s", generation, stringServiceApi.getTheBestString()), Toast.LENGTH_LONG).show();
+        Toast.makeText(activity, String.format(Locale.US, "%d %s", generation, stringServiceApi.getTheBestString()),
+                       Toast.LENGTH_LONG).show();
     }
 }

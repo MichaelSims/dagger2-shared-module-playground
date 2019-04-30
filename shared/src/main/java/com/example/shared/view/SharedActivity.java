@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
-import com.example.shared.SharedModuleComponentProvider;
 import com.example.shared.R;
 import com.example.shared.SharedPerActivityComponent;
 import com.example.shared.StringServiceApi;
@@ -25,11 +24,10 @@ public abstract class SharedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getComponent().inject(this);
         setContentView(R.layout.activity_shared);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        //noinspection ConstantConditions
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,12 +36,10 @@ public abstract class SharedActivity extends AppCompatActivity {
                 toasterApi.showToast();
             }
         });
-        TextView textView = (TextView) findViewById(R.id.shared_text_view);
-        //noinspection ConstantConditions
+        TextView textView = findViewById(R.id.shared_text_view);
         textView.setText(stringService.getTheBestString());
     }
 
-    private SharedPerActivityComponent component = null;
     protected abstract SharedPerActivityComponent getComponent();
 
     @Override

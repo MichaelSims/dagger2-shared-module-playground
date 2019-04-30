@@ -1,6 +1,5 @@
 package com.example.dagger2sharedmoduleplayground.dagger;
 
-import com.example.shared.ScopedComponentBuilder;
 import com.example.shared.SharedModuleComponent;
 import dagger.Component;
 

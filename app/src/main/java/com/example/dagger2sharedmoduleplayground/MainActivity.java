@@ -9,7 +9,6 @@ import com.example.dagger2sharedmoduleplayground.dagger.PerActivityComponent;
 import com.example.dagger2sharedmoduleplayground.dagger.PerActivityModule;
 import com.example.dagger2sharedmoduleplayground.services.StringService;
 import com.example.dagger2sharedmoduleplayground.services.Toaster;
-import com.example.shared.view.SharedActivity;
 
 import javax.inject.Inject;
 import javax.inject.Provider;
@@ -23,14 +22,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //((MyApplication) getApplication()).getApplicationComponent().inject(this);
         getComponent().inject(this);
         setContentView(R.layout.activity_main);
-        TextView textView = (TextView) findViewById(R.id.the_best_string);
-        //noinspection ConstantConditions
+        TextView textView = findViewById(R.id.the_best_string);
         textView.setText(stringService.getTheBestString());
         View button = findViewById(R.id.go_to_shared_activity);
-        //noinspection ConstantConditions
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,11 +44,15 @@ public class MainActivity extends AppCompatActivity {
 
 
     private PerActivityComponent component = null;
+
     PerActivityComponent getComponent() {
         if (component == null) {
             Object lastCustomNonConfigurationInstance = getLastCustomNonConfigurationInstance();
             if (lastCustomNonConfigurationInstance == null) {
-                component = ((MyApplication) getApplication()).getApplicationComponent().getSharedScopedComponentBuilderProvider().get().perActivityModule(new PerActivityModule(this)).build();
+                component = ((MyApplication) getApplication())
+                        .getApplicationComponent()
+                        .getSharedScopedComponentBuilderProvider().get()
+                        .perActivityModule(new PerActivityModule(this)).build();
             } else {
                 component = (PerActivityComponent) lastCustomNonConfigurationInstance;
             }

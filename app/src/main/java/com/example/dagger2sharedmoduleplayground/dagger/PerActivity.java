@@ -1,9 +1,8 @@
 package com.example.dagger2sharedmoduleplayground.dagger;
 
+import javax.inject.Scope;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
-
-import javax.inject.Scope;
 
 @Scope
 @Retention(RetentionPolicy.RUNTIME)
